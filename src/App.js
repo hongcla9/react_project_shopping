@@ -91,7 +91,8 @@ function App() {
 </Route>
 
 <Route path="/cart">
-  <Cart></Cart>
+  <Cart>
+</Cart>
 </Route>
 
 <Route path="/:id">
