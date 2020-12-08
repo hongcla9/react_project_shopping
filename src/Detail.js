@@ -5,6 +5,7 @@ import './Detail.scss';
 import {Nav} from 'react-bootstrap';
 import {재고context} from './App.js';
 import {CSSTransition } from "react-transition-group";
+import {connect } from 'react-redux';
 //css를 미리 입혀놓은 컴포넌트
 let 박스 = styled.div`
 padding :20px;
@@ -56,7 +57,13 @@ function Detail(props){
           <p>{props.clothes[id].content}</p>
           <p>{props.clothes[id].price}원</p>
           <Info 재고={props.재고}></Info>
-          <button className="btn btn-danger">주문하기</button> 
+          
+          <button className="btn btn-danger" onClick={()=>{
+            props.재고변경([9,11,12]);
+            props.dispatch({type:'항목추가', payload : 
+            {id:2, name:'새로운상품', quan : 1 } });
+            history.push('/cart');
+          }}>주문하기</button> 
           <button onClick={()=>{ history.push('/') }} className="btn btn-danger">뒤로가기</button> 
         </div>
       </div>
@@ -102,4 +109,17 @@ function Info(props)
     </div>
   )
 }
-export default Detail;
+
+
+
+
+
+function state를props화(state){
+  console.log(state);
+  return {
+    state : state.reducer,
+    alert열렸니 : state.reducer2
+  }
+}
+export default connect(state를props화)(Detail);
+
