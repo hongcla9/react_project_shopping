@@ -108,9 +108,9 @@ function Card(props) {
   let history = useHistory();
 
   return (
-    <div className="col-md-4" onClick={()=>{history.push('/detail/'+props.clothes.id)}}>
-      <img src={ 'https://codingapple1.github.io/shop/shoes' + (props.i+1) + 
-      '.jpg'} width="100%"/>
+    //<div className="col-md-4" onClick={()=>{history.push('/detail/'+props.clothes.id)}}>
+      //<img src={ 'https://codingapple1.github.io/shop/shoes' + (props.i+1) + 
+      //'.jpg'} width="100%"/>
       <h4>{props.clothes.title}</h4>
   <p>{ props.clothes.content } & {props.clothes.price}</p>
   {재고[props.i]}

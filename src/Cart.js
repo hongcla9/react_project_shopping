@@ -1,7 +1,7 @@
 import React from "react";
 import {Table} from "react-bootstrap";
 import {connect} from 'react-redux';
-
+import index from './index.js'
 function Cart(props){
     return (
       <div>
@@ -24,13 +24,19 @@ function Cart(props){
             )
           })  }
         </Table>
+        <div className="my-alert2">
+          <p>지금 구매하시면 신규할인 20%</p>
+          <button>닫기</button>
+        </div>
       </div>
     )
   }
 
-  function state를props화(state) {
-      return {
-          state:state
-      }
+  function state를props화(state){
+    console.log(state);
+    return {
+      state : state.reducer,
+      alert열렸니 : state.reducer2
+    }
   }
   export default connect(state를props화)(Cart);
